@@ -1,0 +1,18 @@
+test_class_separation (test_decision_policy.PolicyTests.test_class_separation) ... ok
+test_per_field_no_review_examples_are_not_fabricated_recall (test_decision_policy.PolicyTests.test_per_field_no_review_examples_are_not_fabricated_recall) ... ok
+test_real_calendar_lags_not_previous_observed_row (test_decision_policy.PolicyTests.test_real_calendar_lags_not_previous_observed_row) ... ok
+test_review_threshold (test_decision_policy.PolicyTests.test_review_threshold) ... ok
+test_temporal_splits_chronological (test_decision_policy.PolicyTests.test_temporal_splits_chronological) ... ok
+test_gaps_are_not_interpolated_or_shifted (test_ml_pipeline.MLIntegrityTests.test_gaps_are_not_interpolated_or_shifted) ... ok
+test_walk_forward_purge (test_ml_pipeline.MLIntegrityTests.test_walk_forward_purge) ... ok
+test_crop_calendar (test_recommendations.TestIrrigationRecommendations.test_crop_calendar) ... ok
+test_fao_nominal_threshold (test_recommendations.TestIrrigationRecommendations.test_fao_nominal_threshold) ... ok
+test_future_issued_forecast_rejected (test_recommendations.TestIrrigationRecommendations.test_future_issued_forecast_rejected) ... ok
+test_postpone_requires_preissued_forecast (test_recommendations.TestIrrigationRecommendations.test_postpone_requires_preissued_forecast) ... ok
+test_provisional_dry_not_automatic (test_recommendations.TestIrrigationRecommendations.test_provisional_dry_not_automatic) ... ok
+test_stale_smap_rejected (test_recommendations.TestIrrigationRecommendations.test_stale_smap_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.142s
+
+OK
