@@ -1,0 +1,132 @@
+column,source
+timestamp,Integration metadata
+air_temperature_sensor,Zenodo sensor
+air_humidity_sensor,Zenodo sensor
+air_pressure_sensor,Zenodo sensor
+dew_point_sensor,Zenodo sensor
+soil_moisture_sensor,Zenodo sensor
+soil_temperature_sensor,Zenodo sensor
+battery_voltage,Integration metadata
+solar_panel_voltage,Integration metadata
+precipitation_sensor,Zenodo sensor
+field_id,Integration metadata
+latitude,Integration metadata
+longitude,Integration metadata
+crop,Zenodo sensor
+duplicate_timestamp,Integration metadata
+flag_soil_temperature_range,Integration metadata
+flag_air_temperature_range,Integration metadata
+flag_air_humidity_range,Integration metadata
+flag_soil_moisture_range,Integration metadata
+flag_negative_precipitation,Integration metadata
+any_quality_flag,Integration metadata
+station_id,Zenodo sensor
+year,Integration metadata
+missing_sensor_record,Integration metadata
+openmeteo_temperature_2m,OpenMeteo
+openmeteo_relative_humidity_2m,OpenMeteo
+openmeteo_rain,OpenMeteo
+openmeteo_precipitation,OpenMeteo
+openmeteo_wind_speed_10m,OpenMeteo
+openmeteo_wind_speed_100m,OpenMeteo
+openmeteo_wind_direction_10m,OpenMeteo
+openmeteo_wind_direction_100m,OpenMeteo
+openmeteo_et0_fao_evapotranspiration,OpenMeteo
+openmeteo_vapour_pressure_deficit,OpenMeteo
+openmeteo_soil_temperature_0_to_7cm,OpenMeteo
+openmeteo_soil_moisture_0_to_7cm,OpenMeteo
+openmeteo_terrestrial_radiation,OpenMeteo
+openmeteo_global_tilted_irradiance,OpenMeteo
+openmeteo_direct_radiation,OpenMeteo
+openmeteo_soil_temperature_7_to_28cm,OpenMeteo
+openmeteo_soil_moisture_7_to_28cm,OpenMeteo
+openmeteo_snowfall,OpenMeteo
+openmeteo_wet_bulb_temperature_2m,OpenMeteo
+openmeteo_total_column_integrated_water_vapour,OpenMeteo
+era5_grid_latitude,ERA5-Land
+era5_grid_longitude,ERA5-Land
+era5_stl1,ERA5-Land
+era5_stl2,ERA5-Land
+era5_stl3,ERA5-Land
+era5_stl4,ERA5-Land
+era5_swvl1,ERA5-Land
+era5_swvl2,ERA5-Land
+era5_swvl3,ERA5-Land
+era5_swvl4,ERA5-Land
+era5_lai_hv,ERA5-Land
+era5_lai_lv,ERA5-Land
+era5_evabs,ERA5-Land
+era5_evavt,ERA5-Land
+era5_pev,ERA5-Land
+era5_e,ERA5-Land
+era5_ssro,ERA5-Land
+era5_sro,ERA5-Land
+era5_d2m,ERA5-Land
+era5_t2m,ERA5-Land
+era5_ssrd,ERA5-Land
+era5_u10,ERA5-Land
+era5_v10,ERA5-Land
+era5_sp,ERA5-Land
+era5_tp,ERA5-Land
+era5_t2m_c,ERA5-Land
+era5_d2m_c,ERA5-Land
+era5_stl1_c,ERA5-Land
+era5_stl2_c,ERA5-Land
+era5_stl3_c,ERA5-Land
+era5_stl4_c,ERA5-Land
+era5_tp_mm,ERA5-Land
+era5_sp_hpa,ERA5-Land
+era5_wind_speed_10m,ERA5-Land
+era5_relative_humidity,ERA5-Land
+smap_timestamp,SMAP L4
+smap_grid_latitude,SMAP L4
+smap_grid_longitude,SMAP L4
+source_file,Integration metadata
+smap_sm_surface,SMAP L4
+smap_sm_rootzone,SMAP L4
+smap_sm_profile,SMAP L4
+smap_soil_temp_layer1,SMAP L4
+smap_soil_temp_layer2,SMAP L4
+smap_soil_temp_layer3,SMAP L4
+smap_soil_temp_layer4,SMAP L4
+smap_soil_temp_layer5,SMAP L4
+smap_soil_temp_layer6,SMAP L4
+smap_land_evapotranspiration_flux,SMAP L4
+smap_precipitation_total_surface_flux,SMAP L4
+smap_soil_water_infiltration_flux,SMAP L4
+smap_overland_runoff_flux,SMAP L4
+smap_leaf_area_index,SMAP L4
+smap_vegetation_greenness_fraction,SMAP L4
+smap_surface_temp,SMAP L4
+smap_surface_pressure,SMAP L4
+smap_age_hours,SMAP L4
+smap_static_grid_latitude,SMAP static
+smap_static_grid_longitude,SMAP static
+smap_static_cell_elevation,SMAP static
+smap_static_cell_land_fraction,SMAP static
+smap_static_clsm_cdcr1,SMAP static
+smap_static_clsm_cdcr2,SMAP static
+smap_static_clsm_dzgt1,SMAP static
+smap_static_clsm_dzgt2,SMAP static
+smap_static_clsm_dzgt3,SMAP static
+smap_static_clsm_dzgt4,SMAP static
+smap_static_clsm_dzgt5,SMAP static
+smap_static_clsm_dzgt6,SMAP static
+smap_static_clsm_dzpr,SMAP static
+smap_static_clsm_dzrz,SMAP static
+smap_static_clsm_dzsf,SMAP static
+smap_static_clsm_dztsurf,SMAP static
+smap_static_clsm_poros,SMAP static
+smap_static_clsm_wp,SMAP static
+smap_static_clsm_veghght,SMAP static
+smap_static_mwrtm_clay,SMAP static
+smap_static_mwrtm_sand,SMAP static
+smap_static_mwrtm_poros,SMAP static
+smap_static_mwrtm_soilcls,SMAP static
+smap_static_mwrtm_vegcls,SMAP static
+date,Integration metadata
+smap_1km_surface_soil_moisture,SMAP 1km
+has_sensor_target,Integration metadata
+has_era5,Integration metadata
+has_smap_l4,Integration metadata
+has_openmeteo,Integration metadata
