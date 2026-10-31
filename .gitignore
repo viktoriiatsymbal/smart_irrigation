@@ -1,0 +1,8 @@
+__pycache__/
+.DS_Store
+.venv/
+zenodo_data/
+copernicus_data/
+nsidc_data/
+processed/
+checks/
