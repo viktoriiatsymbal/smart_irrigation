@@ -1,9 +1,0 @@
-feature,field_id,train_median,test_median,difference,n_train,n_test
-sm_clean,field_3334,93.3,87.35,-5.950000000000003,8143,3338
-sm_clean,field_3335,92.2,94.1,1.8999999999999915,5878,2078
-battery_voltage,field_3334,4.1,4.1,0.0,8896,4220
-battery_voltage,field_3335,4.1,4.1,0.0,6499,2496
-air_temperature_sensor,field_3334,11.6,17.9,6.299999999999999,8896,4122
-air_temperature_sensor,field_3335,16.5,15.2,-1.3000000000000007,6189,2387
-soil_temperature_sensor,field_3334,12.0,21.0,9.0,8896,4123
-soil_temperature_sensor,field_3335,19.0,16.0,-3.0,6193,2432
