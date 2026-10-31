@@ -1,0 +1,376 @@
+{
+  "data_quality": {
+    "input": "/mnt/data/irrigation_ml_dataset.csv",
+    "source_target": "soil_moisture_sensor",
+    "duplicate_rows_removed": 0,
+    "raw_rows": 27346,
+    "full_hourly_rows": 27868,
+    "n_fields": 2,
+    "clean_target_coverage_pct": 69.75,
+    "bad_sensor_records": 2674,
+    "stuck_sensor_records": 472,
+    "low_battery_records": 416,
+    "notes": [
+      "Cleaning reconstructed from available raw data; not identical to teammate's sm_clean.",
+      "sm < 10 assumed faulty sensor readings; engineering assumption pending confirmation.",
+      "No linear interpolation. NaN targets excluded from supervised loss.",
+      "Retrospective benchmark only; real-time sensor access and forecasting weather feeds require verification."
+    ],
+    "feature_count": 43,
+    "features": [
+      "hour_sin",
+      "hour_cos",
+      "doy_sin",
+      "doy_cos",
+      "sm_observed",
+      "battery_low",
+      "sensor_invalid_now",
+      "sensor_stuck_now",
+      "quality_any",
+      "anom_iforest_indicator",
+      "anom_rule_indicator",
+      "sensor_record_missing",
+      "sm_clean",
+      "battery_voltage",
+      "air_temperature_sensor",
+      "air_humidity_sensor",
+      "soil_temperature_sensor",
+      "precipitation_sensor",
+      "solar_panel_voltage",
+      "sm_clean_lag1",
+      "sm_clean_lag6",
+      "sm_clean_lag24",
+      "sm_clean_lag72",
+      "sm_clean_lag168",
+      "air_temperature_sensor_lag1",
+      "air_temperature_sensor_lag6",
+      "air_temperature_sensor_lag24",
+      "air_temperature_sensor_lag72",
+      "air_temperature_sensor_lag168",
+      "precipitation_sensor_lag1",
+      "precipitation_sensor_lag6",
+      "precipitation_sensor_lag24",
+      "precipitation_sensor_lag72",
+      "precipitation_sensor_lag168",
+      "sm_mean_prev6h",
+      "sm_count_prev6h",
+      "sm_mean_prev24h",
+      "sm_count_prev24h",
+      "sm_mean_prev72h",
+      "sm_count_prev72h",
+      "rain_past24h",
+      "rain_past72h",
+      "field_3335"
+    ],
+    "forecasts": [
+      24,
+      72,
+      168
+    ],
+    "decision_time": "06:00 (assumed same naive time basis as input; timezone unverified)"
+  },
+  "classification_label_source": "DEMO_PROXY: next-day clean sensor moisture < 70.0; not actual irrigation need",
+  "classification_is_real_irrigation": false,
+  "notes": [
+    "Model benchmark must beat persistence, checked independently for each horizon.",
+    "Only 2 fields; transfer to unseen fields NOT established.",
+    "Synthetic/demo labels cannot establish irrigation decision performance.",
+    "Advanced notebook constructs simulated FAO-56 irrigation labels; these are also not actual irrigation events.",
+    "Only measurements at issuance and earlier are used; no future ERA5, SMAP, or Open-Meteo reanalysis."
+  ],
+  "regression_metrics": [
+    {
+      "horizon_h": 24,
+      "fold": 1,
+      "model": "persistence",
+      "n_train": 13769,
+      "n_test": 3435,
+      "MAE": 1.3657933042212518,
+      "RMSE": 4.2011120036197305
+    },
+    {
+      "horizon_h": 24,
+      "fold": 1,
+      "model": "lightgbm_level",
+      "n_train": 13769,
+      "n_test": 3435,
+      "MAE": 2.5407599653056323,
+      "RMSE": 5.373211447054165
+    },
+    {
+      "horizon_h": 24,
+      "fold": 1,
+      "model": "lightgbm_delta",
+      "n_train": 13769,
+      "n_test": 3435,
+      "MAE": 3.4449413618186076,
+      "RMSE": 7.495861401701052
+    },
+    {
+      "horizon_h": 24,
+      "fold": 2,
+      "model": "persistence",
+      "n_train": 17252,
+      "n_test": 1047,
+      "MAE": 2.7212989493791784,
+      "RMSE": 6.153308798447746
+    },
+    {
+      "horizon_h": 24,
+      "fold": 2,
+      "model": "lightgbm_level",
+      "n_train": 17252,
+      "n_test": 1047,
+      "MAE": 6.330666160365877,
+      "RMSE": 9.920187677502229
+    },
+    {
+      "horizon_h": 24,
+      "fold": 2,
+      "model": "lightgbm_delta",
+      "n_train": 17252,
+      "n_test": 1047,
+      "MAE": 5.121131974269541,
+      "RMSE": 8.10886301313411
+    },
+    {
+      "horizon_h": 24,
+      "fold": 3,
+      "model": "persistence",
+      "n_train": 18347,
+      "n_test": 671,
+      "MAE": 6.87645305514158,
+      "RMSE": 15.576894980323194
+    },
+    {
+      "horizon_h": 24,
+      "fold": 3,
+      "model": "lightgbm_level",
+      "n_train": 18347,
+      "n_test": 671,
+      "MAE": 12.426003043759632,
+      "RMSE": 18.637983348083676
+    },
+    {
+      "horizon_h": 24,
+      "fold": 3,
+      "model": "lightgbm_delta",
+      "n_train": 18347,
+      "n_test": 671,
+      "MAE": 10.267519478195604,
+      "RMSE": 17.41943914727956
+    },
+    {
+      "horizon_h": 72,
+      "fold": 1,
+      "model": "persistence",
+      "n_train": 13372,
+      "n_test": 3291,
+      "MAE": 3.8385597082953504,
+      "RMSE": 8.334485183232552
+    },
+    {
+      "horizon_h": 72,
+      "fold": 1,
+      "model": "lightgbm_level",
+      "n_train": 13372,
+      "n_test": 3291,
+      "MAE": 7.256755287841833,
+      "RMSE": 12.599749727204896
+    },
+    {
+      "horizon_h": 72,
+      "fold": 1,
+      "model": "lightgbm_delta",
+      "n_train": 13372,
+      "n_test": 3291,
+      "MAE": 6.288253003156315,
+      "RMSE": 9.774405643914111
+    },
+    {
+      "horizon_h": 72,
+      "fold": 2,
+      "model": "persistence",
+      "n_train": 16805,
+      "n_test": 855,
+      "MAE": 6.335555555555555,
+      "RMSE": 8.573246159279597
+    },
+    {
+      "horizon_h": 72,
+      "fold": 2,
+      "model": "lightgbm_level",
+      "n_train": 16805,
+      "n_test": 855,
+      "MAE": 13.489250729053484,
+      "RMSE": 18.992671233620698
+    },
+    {
+      "horizon_h": 72,
+      "fold": 2,
+      "model": "lightgbm_delta",
+      "n_train": 16805,
+      "n_test": 855,
+      "MAE": 11.824256307723447,
+      "RMSE": 16.123965603996815
+    },
+    {
+      "horizon_h": 72,
+      "fold": 3,
+      "model": "persistence",
+      "n_train": 17804,
+      "n_test": 540,
+      "MAE": 20.53851851851852,
+      "RMSE": 29.690383778066742
+    },
+    {
+      "horizon_h": 72,
+      "fold": 3,
+      "model": "lightgbm_level",
+      "n_train": 17804,
+      "n_test": 540,
+      "MAE": 21.870365789431627,
+      "RMSE": 30.059566363064302
+    },
+    {
+      "horizon_h": 72,
+      "fold": 3,
+      "model": "lightgbm_delta",
+      "n_train": 17804,
+      "n_test": 540,
+      "MAE": 24.114695233429206,
+      "RMSE": 32.35245690463166
+    },
+    {
+      "horizon_h": 168,
+      "fold": 1,
+      "model": "persistence",
+      "n_train": 12749,
+      "n_test": 3078,
+      "MAE": 7.818518518518519,
+      "RMSE": 13.795906531904203
+    },
+    {
+      "horizon_h": 168,
+      "fold": 1,
+      "model": "lightgbm_level",
+      "n_train": 12749,
+      "n_test": 3078,
+      "MAE": 9.631134096550564,
+      "RMSE": 13.357746930658035
+    },
+    {
+      "horizon_h": 168,
+      "fold": 1,
+      "model": "lightgbm_delta",
+      "n_train": 12749,
+      "n_test": 3078,
+      "MAE": 10.942861490449465,
+      "RMSE": 15.98466963446977
+    },
+    {
+      "horizon_h": 168,
+      "fold": 2,
+      "model": "persistence",
+      "n_train": 16161,
+      "n_test": 673,
+      "MAE": 13.410104011887073,
+      "RMSE": 14.18665111421835
+    },
+    {
+      "horizon_h": 168,
+      "fold": 2,
+      "model": "lightgbm_level",
+      "n_train": 16161,
+      "n_test": 673,
+      "MAE": 28.958874211128954,
+      "RMSE": 34.43818928734005
+    },
+    {
+      "horizon_h": 168,
+      "fold": 2,
+      "model": "lightgbm_delta",
+      "n_train": 16161,
+      "n_test": 673,
+      "MAE": 12.142714116315776,
+      "RMSE": 14.138484632344262
+    },
+    {
+      "horizon_h": 168,
+      "fold": 3,
+      "model": "persistence",
+      "n_train": 17017,
+      "n_test": 425,
+      "MAE": 47.10564705882352,
+      "RMSE": 49.929372470461885
+    },
+    {
+      "horizon_h": 168,
+      "fold": 3,
+      "model": "lightgbm_level",
+      "n_train": 17017,
+      "n_test": 425,
+      "MAE": 40.040395642410104,
+      "RMSE": 45.553297663981276
+    },
+    {
+      "horizon_h": 168,
+      "fold": 3,
+      "model": "lightgbm_delta",
+      "n_train": 17017,
+      "n_test": 425,
+      "MAE": 41.62554097055709,
+      "RMSE": 46.005818196794706
+    }
+  ],
+  "classification_metrics": [
+    {
+      "fold": 1,
+      "status": "OK",
+      "n_train": 583,
+      "n_test": 144,
+      "positive_train": 28,
+      "positive_test": 11,
+      "threshold": 0.5,
+      "F1": 0.375,
+      "Recall": 0.2727272727272727,
+      "Precision": 0.6,
+      "F2": 0.30612244897959184,
+      "PR_AUC": 0.6507936507936507,
+      "FN": 8,
+      "FP": 2
+    },
+    {
+      "fold": 2,
+      "status": "OK",
+      "n_train": 729,
+      "n_test": 46,
+      "positive_train": 39,
+      "positive_test": 19,
+      "threshold": 0.15,
+      "F1": 0.9230769230769231,
+      "Recall": 0.9473684210526315,
+      "Precision": 0.9,
+      "F2": 0.9375,
+      "PR_AUC": 0.9949874686716792,
+      "FN": 1,
+      "FP": 2
+    },
+    {
+      "fold": 3,
+      "status": "OK",
+      "n_train": 777,
+      "n_test": 32,
+      "positive_train": 58,
+      "positive_test": 21,
+      "threshold": 0.15,
+      "F1": 0.9090909090909091,
+      "Recall": 0.9523809523809523,
+      "Precision": 0.8695652173913043,
+      "F2": 0.9345794392523364,
+      "PR_AUC": 0.8988896122797052,
+      "FN": 1,
+      "FP": 3
+    }
+  ]
+}

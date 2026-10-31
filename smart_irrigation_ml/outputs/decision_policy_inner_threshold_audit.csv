@@ -1,0 +1,4 @@
+fold,inner_train_n,inner_validation_n,inner_train_latest,inner_validation_earliest,inner_validation_end_exclusive,criterion,threshold,inner_f2,inner_pos_n,inner_selected_alerts
+1,246,60,2024-08-30 06:00:00,2024-09-01 06:00:00,2024-10-01 00:00:00,"F2 positive=review_irrigation, threshold tuned only in 2024",0.9,1.0,9,9
+2,246,60,2024-08-30 06:00:00,2024-09-01 06:00:00,2024-10-01 00:00:00,"F2 positive=review_irrigation, threshold tuned only in 2024",0.9,1.0,9,9
+3,246,60,2024-08-30 06:00:00,2024-09-01 06:00:00,2024-10-01 00:00:00,"F2 positive=review_irrigation, threshold tuned only in 2024",0.9,1.0,9,9

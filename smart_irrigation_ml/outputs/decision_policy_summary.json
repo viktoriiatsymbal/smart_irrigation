@@ -1,0 +1,67 @@
+{
+  "status": "research_only; trained ML policy distilling unverified physics-based actions",
+  "real_world_irrigation_precision_recall_available": false,
+  "labels": "Teacher = previous FAO-56-style rule with ASSUMED loam soil FC/PWP and crop calendar",
+  "target_name": "proxy_action_from_assumed_FAO56_rule_NOT_GROUND_TRUTH",
+  "teacher_counts_all_dates": {
+    "no_action_out_of_season": 497,
+    "no_action": 339,
+    "monitor": 241,
+    "review_irrigation": 61,
+    "insufficient_data": 22
+  },
+  "training_counts_three_in_season_classes": {
+    "no_action": 339,
+    "monitor": 241,
+    "review_irrigation": 61
+  },
+  "proxy_positive_labels_sensitive_to_soil_assumptions": 61,
+  "all_proxy_positives": 61,
+  "n_labeled_training_rows": 641,
+  "fields": [
+    "field_3334",
+    "field_3335"
+  ],
+  "test_windows": [
+    [
+      "2025-06-01",
+      "2025-07-15"
+    ],
+    [
+      "2025-07-15",
+      "2025-08-15"
+    ],
+    [
+      "2025-08-15",
+      "2025-10-06"
+    ]
+  ],
+  "gap_days": 1,
+  "threshold_selection": "Only historical 2024 validation; independent 2025 outer tests",
+  "pooled_outer_test_agreement_WITH_TEACHER_NOT_REAL_WORLD": {
+    "split": "pooled_strictly_future_outer_tests",
+    "n": 244,
+    "n_review_true_proxy": 37,
+    "n_review_pred": 43,
+    "agreement_macro_F1": 0.6871718278070961,
+    "agreement_weighted_F1": 0.7078005559699847,
+    "review_recall_proxy": 0.6486486486486487,
+    "review_precision_proxy": 0.5581395348837209,
+    "review_F2_proxy": 0.6282722513089005,
+    "review_false_negatives_proxy": 13,
+    "review_false_positives_proxy": 19,
+    "review_PR_AUC_proxy": 0.5870654556079032,
+    "balanced_accuracy_proxy": 0.6917147917147917,
+    "explicit_truth_available": false
+  },
+  "final_2024_only_threshold": 0.9,
+  "constraints": [
+    "Two fields, review positives only in field_3335: site transfer not demonstrated.",
+    "All review candidates depend on uncertain soil hydraulic assumptions.",
+    "No true irrigation event labels, no field sensor calibration, no real-time forecast issued times.",
+    "Archive ends in October 2025. Predictions are historical, not currently actionable.",
+    "The student classifier cannot validate or outperform the teacher measured against the teacher itself.",
+    "insufficient_data and out-of-season cases are handled by the rule engine, not relabeled as no_action.",
+    "No automatic valve control or agronomic accuracy claims."
+  ]
+}
